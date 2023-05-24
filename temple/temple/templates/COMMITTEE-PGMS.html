@@ -1,0 +1,34 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<h1><center>Manage Committee Programmes</center></h1>
+
+<body>
+<form id="form1" name="form1" method="post" action="cm_add_pgms">
+  <table width="246" height="89" border="1" id="customers">
+    <tr>
+      <th width="46">PROGRAM</th>
+      <th width="49">VENUE</th>
+      <th width="53">DATE</th>
+      <th width="53">TIME</th>
+      <th width="70">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.program}}</td>
+      <td>&nbsp;{{i.venue}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>&nbsp;{{i.time}}</td>
+      <td><p><a href="{% url 'cm_edit_cm_pgm' id=i.id %}" class="btn btn-success">EDIT</a></p>
+      <p><a href="{% url 'delete_cm_pgm' id=i.id %}" class="btn btn-danger">DELETE</a></p></td>
+    </tr>
+          {% endfor%}
+
+  </table>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="ADD NEW" class="btn btn-info"/>
+    </label>
+  </p>
+</form>
+</body>
+{% endblock %}

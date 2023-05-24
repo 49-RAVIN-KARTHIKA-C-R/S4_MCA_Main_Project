@@ -1,0 +1,40 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head><center><h2>VIDEOS</h2></head></center>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="209" border="1" id="customers">
+<!--    <tr>-->
+<!--      <td width="49">VIDEO</td>-->
+<!--      <td width="144"><label>-->
+<!--      <input type="text" name="textfield" />-->
+<!--      </label></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>DATETIME</td>-->
+<!--      <td><input type="text" name="textfield3" /></td>-->
+<!--    </tr>-->
+
+     <tr>
+      <td width="46">EVENT NAME</td>
+      <td width="46">VENUE OF PROGRAMME</td>
+      <td width="107">DATE-TIME </td>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+     <td>{{i.subject}}</td>
+      <td><video  height="150" width="350" controls="controls">
+        <source src="./media/{{i.video}}" type="video/mp4"> </video></td>
+      <td>{{i.date_time}}</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+  <label></label>
+</form>
+</body>
+
+{% endblock %}

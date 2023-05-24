@@ -1,0 +1,40 @@
+
+{% extends 'indexadmin.html' %}
+{% block body %}
+<center><h2>ADD PROGRAMMES</h2></center>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_temple_pgm" enctype="multipart/form-data">
+  <table width="209" border="1" id="customers">
+    <tr>
+      <th width="49">PROGRAM</th>
+      <td width="144"><label>
+        <input type="text" name="textfield" pattern="[A-Z a-z]{2,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th height="43">GUEST</th>
+      <td><input type="text" name="textfield2" pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <td><input type="date" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th>TIME</th>
+      <td><input type="time" name="textfield4" required/></td>
+    </tr>
+    <tr>
+      <th height="44">PHOTO</th>
+      <td><label>
+        <input type="file" name="file" required/>
+      </label></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="ADD" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

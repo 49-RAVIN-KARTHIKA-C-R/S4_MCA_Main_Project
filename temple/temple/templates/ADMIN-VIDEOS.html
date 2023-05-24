@@ -1,0 +1,35 @@
+
+{% extends 'indexadmin.html' %}
+{% block body %}
+
+<h1><center>Manage Videos</center></h1>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_video">
+  <table width="242" height="89" border="1" id="customers">
+    <tr>
+      <th width="46">EVENT NAME </th>
+      <th width="49">VIDEO</th>
+      <th width="49">DATE TIME</th>
+      <th width="70">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.subject}}</td>
+      <td><video  height="150" width="350" controls="controls">
+        <source src="./media/{{i.video}}" type="video/mp4"> </video></td>
+      <td>{{i.date_time}}</td>
+      <td><p><a href="{% url 'edit_videos' id=i.id %}" class="btn btn-success">EDIT</a></p>
+      <p><a href="{% url 'delete_videos' id=i.id %}" class="btn btn-danger">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="ADD NEW" class="btn btn-info"/>
+    </label>
+  </p>
+</form>
+</body>
+
+{% endblock %}

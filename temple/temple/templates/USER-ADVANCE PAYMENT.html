@@ -1,0 +1,49 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<h1><center> Advance Payment </center></h1>
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'make_pay' %}">
+  <table width="276" border="0" id="customers" class="table">
+    <tr>
+        <td width="116"><center>NAME</center></td>
+      <td width="144">{{val.first_name}} {{val.last_name}}<label>
+
+      </label></td>
+    </tr>
+      <tr colspan="3"> <td><center>BANK NAME </center></td>
+       <TD>
+        <select name="bank" required>
+          <option>SBI </option>
+          <option>CANARA BANK</option>
+          <option>AXIS BANK</option>
+          <option>SOUTH INDIAN BANK</option>
+          <option>FEDERAL BANK</option>
+        </select>
+</TD>      </tr>
+    <tr>
+        <td><center>IFSC</center></td>
+      <td><input type="text" name="textfield2" required /></td>
+    </tr>
+    <tr>
+        <td><center>PIN</center></td>
+      <td><input type="text" name="textfield3" required pattern="[0-9]{4}"/></td>
+    </tr>
+    <tr>
+        <td><center>ACCOUNTNO</center></td>
+      <td><input type="text" name="textfield4" required /></td>
+    </tr>
+    <tr>
+        <td><center>AMOUNT</center></td>
+      <td> {{v1.advance_charge}} /- </td>
+    </tr>
+  </table>
+    <br>
+    <br>
+  <div align="center">
+    <input type="submit" name="Submit" value="SUBMIT" class="btn btn-info"/>
+  </div>
+  <label></label>
+</form>
+</body>
+{% endblock %}

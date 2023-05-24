@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% block body %}
+<head>
+     <style>
+#customer {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#customer td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customer tr:{background-color: #brown;}
+
+#customer tr:hover {background-color: #ddd;}
+
+#customer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ddd;
+  color: white;
+}
+#customer td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: brown;
+  color: white;
+}
+</style>
+<body>
+<form id="form1" name="form1" method="post" action="/login2">
+  <div align="center">
+       <!--<table width="339" border="8" CLASS="table" style="width:800px;height:100px;" id="">-->
+    <!--<tr>-->
+        <!--<th >-->
+             <table width="339" border="19" CLASS="table" style="width:700px;height:100px;" id="">
+    <tr>
+        <th style="background-color: #ddd;">
+  <table width="339" border="0" CLASS="table" style="width:750px;height:130px;" id="customer">
+    <tr>
+      <td width="86" height="43">USERNAME</td>
+      <td width="292"><label>
+        <input type="text" name="textfield" class="form-control" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="41">PASSWORD</td>
+      <td><label>
+        <input type="password" name="textfield2" class="form-control" required/>
+      </label></td>
+    </tr>
+
+
+        
+
+<!--            <input type="submit" name="Submit2" value="Committee signup"/>-->
+
+
+<!--            <input type="submit" name="Submit3" value="Member signup" />-->
+<!--            <input type="submit" name="Submit32" value="User signup" />-->
+  </table></th></tr></table>
+      <!--</th></tr></table>-->
+  </div>
+  <div align="center">
+          <input type="submit" name="Submit" value="Login" class="btn btn-danger btn-lg" />
+        </div>
+    <!--<div align="center">-->
+ <!--<a href="{% url 'mbr_registration' %}#main" class="btn btn-primary">Member signup</a>-->
+                <!--<a href="{% url 'usr_registration' %}#main" class="btn btn-primary">User signup</a>-->
+    <!--</div>-->
+</form>
+</body>
+{% endblock %}

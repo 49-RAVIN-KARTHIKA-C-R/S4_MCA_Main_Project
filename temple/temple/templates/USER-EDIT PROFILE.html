@@ -1,0 +1,66 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<h1><center>Edit Profile</center></h1>
+
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'update_user_profile' %}" enctype="multipart/form-data">
+  <table width="336" height="250" border="1" id="customers">
+    <tr>
+      <th>FIRST NAME </th>
+      <td><label>
+        <input type="text" name="textfield" value="{{val.first_name}}" required   pattern="[A-Z a-z]{2,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th>LAST NAME </th>
+      <td><input type="text" name="textfield2" value="{{val.last_name}}" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>FATHER'S NAME </th>
+      <td><input type="text" name="textfield10" value="{{val.fathers_name}}" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>HOUSE NAME </th>
+      <td><input type="text" name="textfield3" value="{{val.house_name}}" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>STREET</th>
+      <td><input type="text" name="textfield4" value="{{val.street}}" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>CITY</th>
+      <td><input type="text" name="textfield5" value="{{val.city}}" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>PIN</th>
+      <td><input type="text" name="textfield6" value="{{val.pin}}" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <th>PHONE NUMBER </th>
+      <td><input type="text" name="textfield7" value="{{val.phone}}" required  pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <th>EMAIL</th>
+      <td><input type="text" name="textfield8" value="{{val.email}}"/></td>
+    </tr>
+    <tr>
+      <th>AADHAR CARD NUMBER </th>
+      <td><input type="text" name="textfield9" value="{{val.aadhar_number}}" required pattern="[6789][0-9]{11}"/></td>
+    </tr>
+    <tr>
+      <th>PHOTO</th>
+      <td><label>
+        <input type="file" name="file" />
+        <img src="{{val.photo.url}}" height="100" width="100"/>
+      </label></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="UPDATE" class="btn btn-info" />
+  </p>
+  <label></label>
+</form>
+</body>
+
+{% endblock %}

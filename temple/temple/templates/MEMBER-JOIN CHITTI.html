@@ -1,0 +1,46 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<center><h2>JOIN CHITTI</h2></center>
+<body>
+<form id="form1" name="form1" method="post" action="mbr_join_chitti_search">
+  <table width="170" height="89" border="1" id="customers">
+    <tr align="center">
+      <td colspan="3"> <center>CHITTI :
+        <select name="chittitype" class="btn btn-info">
+          {% for i in val %}
+          <option value="{{i.id}}" {% if i.id  == count %} selected {% endif %}>{{i.type}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="SEARCH" class="btn btn-info"/></center>
+      </td>
+    </tr>
+    <tr>
+      <th width="46">CHITTI NAME </th>
+      <th width="53">WINNING AMOUNT</th>
+      <th width="53">DETAILS</th>
+      <th width="49">CHITTI AMOUNT</th>
+      <th width="53">DURATION IN MONTHS</th>
+      <th width="53"> </th>
+    </tr>
+    {% for i in v1 %}
+    <tr>
+      <td>&nbsp;{{i.type}}</td>
+      <td>&nbsp;{{i.winning_amounts}}</td>
+      <td>&nbsp;{{i.details}}</td>
+      <td>&nbsp;{{i.chitti_amount}}</td>
+      <td>&nbsp;{{i.duration}}</td>
+     {% if c == 0 %} <td><p>  <a href="{% url 'join_chitti_mbr' id=i.id %}" class="btn btn-success">JOIN</a></p>
+    </td>{% else %} <td>joined</td>{% endif %}
+      {% endfor %}
+
+
+
+    </tr>
+  </table>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+
+{% endblock %}

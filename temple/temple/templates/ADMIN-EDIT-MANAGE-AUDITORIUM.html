@@ -1,0 +1,51 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<h1><center>Edit Auditorium Details</center></h1>
+
+<body>
+<form action="{% url 'update_manage_auditorium' %}" method="post" enctype="multipart/form-data" name="form1" id="form1" >
+  <table width="209" border="1" id="customers">
+    <tr>
+      <th width="49">NAME</th>
+      <td width="144"><label>
+        <input type="text" name="textfield" value="{{val.auditorium_name}}" required pattern="[A-Z a-z]{2,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th height="43">PLACE</th>
+      <td><input type="text" name="textfield2" value="{{val.place}} " required pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>PHONE</th>
+      <td><input type="text" name="textfield3" value="{{val.phone}} " required pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <th>SEATS</th>
+      <td><input type="text" name="textfield4" value="{{val.seats}} " required /></td>
+    </tr>
+    <tr>
+      <th>CHARGE UPTO</th>
+      <td>&nbsp;<input type="text" name="textfield7" value="{{val.charge}}"required /></td>
+    </tr>
+    <tr>
+      <th>DETAILS</th>
+      <td><input type="text" name="textfield5" value="{{val.details}} "required /></td>
+    </tr>
+    <tr>
+      <th>ADVANCE PAYMENT</th>
+      <td><input type="text" name="textfield6" value="{{val.advance_charge}} "required /></td>
+    </tr>
+    <tr>
+      <th height="44">PHOTO</th>
+      <td><label>
+        <input type="file" name="file" required/><img src="{{val.photo.url}}" height="100" width="100"/>
+      </label></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="UPDATE" class="btn btn-info" />
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

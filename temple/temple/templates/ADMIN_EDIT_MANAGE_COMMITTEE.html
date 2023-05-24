@@ -1,0 +1,42 @@
+
+{% extends 'indexadmin.html' %}
+{% block body %}
+<center><h2>EDIT COMMITTEE</h2></center>
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'update_committee_mng' %}">
+  <table width="322" height="154" border="1" id="customers">
+    <tr>
+      <td width="152">COMMITTEE NAME</td>
+      <td width="154"><label>
+        <input type="text" name="textfield" value="{{val.committee_name}}" required pattern="[A-Z a-z]{2,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>PRESIDENT</td>
+      <td><input type="text" name="textfield22" value="{{val.president}}" required pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <td>SECRETARY</td>
+      <td><input type="text" name="textfield2" value="{{val.secretary}}" required pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <td>NUMBER OF MEMBERS </td>
+      <td><input type="text" name="textfield3" value="{{val.no_members}}"  required/></td>
+    </tr>
+    <tr>
+      <td>PHONE</td>
+      <td><input type="text" name="textfield4" value="{{val.phone}}"  required  pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td><input type="text" name="textfield5" value="{{val.email}}"/></td>
+    </tr>
+  </table>
+  <br>
+  <p>
+    <input type="submit" name="Submit" value="UPDATE" class="btn btn-info" />
+</p>
+</form>
+</body>
+{% endblock %}

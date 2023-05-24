@@ -1,0 +1,47 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+
+<H2><center>PAYMENT</center></H2>
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'make_payy' %}">
+  <table width="276" border="1" id="customers">
+    <tr>
+      <td width="116">NAME</td>
+      <td width="144">{{v2.first_name}} {{v2.last_name}}</td>
+
+    </tr>
+    <tr colspan="3"> <center><td>BANK NAME </td>
+      <td>
+        <select name="bank" required>
+          <option >SBI </option>
+          <option >CANARA BANK</option>
+          <option >AXIS BANK</option>
+          <option >SOUTH INDIAN BANK</option>
+          <option>FEDERAL BANK </option>
+        </select>
+       </center></td>
+      </tr>
+    <tr>
+      <td>IFSC</td>
+      <td><input type="text" name="textfield22" required /></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><input type="text" name="textfield23" required pattern="[0-9]{4,}"/></td>
+    </tr>
+    <tr>
+      <td>ACCOUNTNO</td>
+      <td><input type="text" name="textfield24" required pattern="[0-9]{4,}"/></td>
+    </tr>
+    <tr>
+      <td>AMOUNT</td>
+     <td> {{v.chitti_id.chitti_amount}}/-</td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="SUBMIT" class="btn btn-info" />
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

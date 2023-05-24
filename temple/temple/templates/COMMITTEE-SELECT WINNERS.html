@@ -1,0 +1,66 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<center><h2>Announce Winner</h2></center>
+
+
+<body>
+<form id="form1" name="form1" method="post" action="winners_slt_chitti_search">
+  <table width="273" height="89" border="1" id="customers">
+    <tr>
+      <th colspan="4"><center>CHITTI
+
+        <select name="chittitype" class="btn btn-primary">
+          {% for i in val %}
+          <option value="{{i.id}}" {% if i.id == c %}selected{% endif %}>{{i.type}}</option>
+          {% endfor %}
+        </select>
+&nbsp;&nbsp;
+    <!--MONTH-->
+
+        <!--<select name="month">-->
+          <!--<option value="1" {% if mnth == 1 %}selected{% endif %}>JANUARY</option>-->
+          <!--<option value="2" {% if mnth == 2 %}selected{% endif %}>FEBRUARY</option>-->
+          <!--<option value="3" {% if mnth == 3 %}selected{% endif %}>MARCH</option>-->
+          <!--<option value="4" {% if mnth == 4 %}selected{% endif %}>APRIL</option>-->
+          <!--<option value="5" {% if mnth == 5 %}selected{% endif %}>MAY</option>-->
+          <!--<option value="6" {% if mnth == 6 %}selected{% endif %}>JUNE</option>-->
+          <!--<option value="7" {% if mnth == 7 %}selected{% endif %}>JULY</option>-->
+          <!--<option value="8" {% if mnth == 8 %}selected{% endif %}>AUGUST</option>-->
+          <!--<option value="9" {% if mnth == 9 %}selected{% endif %}>SEPTEMBER</option>-->
+          <!--<option value="10" {% if mnth == 10 %}selected{% endif %}>OCTOBER</option>-->
+          <!--<option value="11" {% if mnth == 11 %}selected{% endif %}>NOVEMBER</option>-->
+          <!--<option value="12" {% if mnth == 12 %}selected{% endif %}>DECEMBER</option>-->
+        <!--</select>-->
+        &nbsp;&nbsp;
+          <input type="submit" name="Submit" value="SEARCH" class="btn btn-info"/></center>
+      </th>
+    </tr>
+    <tr>
+      <th style="">MEMBERS</th>
+      <th colspan="2">SELECT FOR WINNERS </th>
+    </tr>
+    {% for i in val1 %}
+
+    <tr>
+      <td>&nbsp;{{i.member_id.first_name}} {{i.member_id.last_name}}</td>
+      <td colspan="2"><label>
+        <input type="checkbox" name="checks[]" value="{{i.member_id.login_id.id}}" />
+      </label></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+    <br>
+    <br>
+  <div align="center">
+    <label>
+    <input type="submit" name="Submit" value="SUBMIT" class="btn btn-info"/>
+    </label>
+  </div>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+
+{% endblock %}

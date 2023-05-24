@@ -1,0 +1,36 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<h1>Manage Temple Programme </h1>
+<body>
+<form id="form1" name="form1" method="post" action="add_tmp_pgm_page" >
+  <table width="305" height="89" border="1" id="customers">
+    <tr>
+      <th width="46">PROGRAM</th>
+      <th width="49">GUEST</th>
+      <th width="53">DATE</th>
+      <th width="53">TIME</th>
+      <th width="53">PHOTO</th>
+      <th width="70">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;&nbsp;{{i.program}}</td>
+      <td>&nbsp;{{i.guest}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>&nbsp;&nbsp;{{i.time}}</td>
+      <td>&nbsp;<img src="{{i.photo.url}}" alt="" height="100" width="100"/></td>
+
+      <td><p><a href="{% url 'edit_temple_pgm' id=i.id %}" class="btn btn-success">EDIT</a></p>
+      <p><a href="{% url 'delete_temple_pgm' id=i.id %}" class="btn btn-danger">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+  </table><br>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="ADD NEW" />
+    </label>
+  </p>
+</form>
+</body>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head><center><h2>Chitti  Details</h2></head></center>
+<body>
+<form id="form1" name="form1" method="post" action="mbr_chitti_details">
+  <table width="657" height="89" border="1" id="customers">
+    <tr>
+      <th width="70">CHITTI NAME </th>
+      <th width="109"> STARTING DATE OF CHITTI</th>
+      <th width="109">WINNING AMOUNT</th>
+      <th width="109"> DURATION</th>
+      <th width="109">DEATAILS</th>
+      <th width="109"> CHITTI AMOUNT</th>
+      <th width="109"></th>
+    </tr>
+        {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{i.chitti_id.type}}</td>
+      <td>{{i.chitti_id.date}}</td>
+      <td>&nbsp;{{i.chitti_id.winning_amounts}}</td>
+      <td>{{i.chitti_id.duration}}</td>
+      <td>{{i.chitti_id.details}}</td>
+      <td>{{i.chitti_id.chitti_amount}}</td>
+      <td>&nbsp;<a href="{% url 'mbr_payment' id=i.id %}" class="btn btn-primary">MAKE PAYMENT</a> <br>
+        <BR><a href="mbr_view_paid_chitti_status " class="btn btn-primary">PAYMENT HISTORY</a></td>
+    </tr>
+        {% endfor %}
+
+  </table>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head><center><h2>Profile</h2></head></center>
+<br>
+<body>
+<form id="form1" name="form1" method="post" action="mbr_edit_profile">
+  <table width="100" height="100" border="1" id="customers">
+    <tr>
+      <td>FIRST NAME </td>
+      <td>{{val.first_name}}</td>
+    </tr>
+    <tr>
+      <td>LAST NAME </td>
+      <td>{{val.last_name}}</td>
+    </tr>
+    <tr>
+      <td>HOUSE NAME </td>
+      <td>{{val.house_name}}</td>
+    </tr>
+    <tr>
+      <td>STREET</td>
+      <td>{{val.street}}</td>
+    </tr>
+    <tr>
+      <td>CITY</td>
+      <td>{{val.city}}</td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td>{{val.pin}}</td>
+    </tr>
+    <tr>
+      <td>PHONE NUMBER </td>
+      <td>{{val.phone}}</td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td>{{val.email}}</td>
+    </tr>
+    <tr>
+      <td>AADHAR CARD NUMBER </td>
+      <td>{{val.aadhar_number}}</td>
+    </tr>
+    <tr>
+      <td>PHOTO</td>
+            <td><img src="{{val.photo.url}}" alt="" height="100" width="100"/></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="EDIT" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

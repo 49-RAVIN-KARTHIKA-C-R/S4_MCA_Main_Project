@@ -1,0 +1,28 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<h1><center>Temple Programmes</center></h1>
+<body>
+<form id="form1" name="form1" method="post" action="" >
+  <table width="305" height="89" border="1" id="customers">
+    <tr>
+      <th width="46">PROGRAM</th>
+      <th width="49">GUEST</th>
+      <th width="53">DATE</th>
+      <th width="53">TIME</th>
+      <th width="53">PHOTO</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;&nbsp;{{i.program}}</td>
+      <td>&nbsp;{{i.guest}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>&nbsp;&nbsp;{{i.time}}</td>
+      <td>&nbsp;<img src="{{i.photo.url}}" alt="" height="100" width="100"/></td>
+
+    </tr>
+    {% endfor %}
+  </table><br>
+
+</form>
+</body>
+{% endblock %}

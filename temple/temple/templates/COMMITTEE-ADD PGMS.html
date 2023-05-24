@@ -1,0 +1,33 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<h1><center>Add Committe Programme</center></h1>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_committee_pgm">
+  <table width="209" border="1" id="customers">
+    <tr>
+      <th width="49">PROGRAM</th>
+      <td width="144"><label>
+        <input type="text" name="textfield" required   pattern="[A-Z a-z]{2,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th height="43">VENUE</th>
+      <td><input type="text" name="textfield2" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <td><input type="date" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th>TIME</th>
+      <td><input type="time" name="textfield4" required/></td>
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="ADD" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

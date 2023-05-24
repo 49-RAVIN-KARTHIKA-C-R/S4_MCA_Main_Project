@@ -1,0 +1,62 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<center><h2>PROFILE</h2></center>
+<BR>
+<body>
+<form id="form1" name="form1" method="post" action="usr_edit_profile">
+  <table width="336" height="250" border="1" id="customers">
+    <tr>
+      <th>FIRST NAME </th>
+      <td>{{val.first_name}}</td>
+    </tr>
+    <tr>
+      <th>LAST NAME </th>
+      <td>{{val.last_name}}</td>
+    </tr>
+    <tr>
+      <th>FATHER'S NAME </th>
+      <td>{{val.fathers_name}}</td>
+    </tr>
+    <tr>
+      <th>HOUSE NAME </th>
+      <td>{{val.house_name}}</td>
+    </tr>
+    <tr>
+      <th>STREET</th>
+      <td>{{val.street}}</td>
+    </tr>
+    <tr>
+      <th>CITY</th>
+      <td>{{val.city}}</td>
+    </tr>
+    <tr>
+      <th>PIN</th>
+      <td>{{val.pin}}</td>
+    </tr>
+    <tr>
+      <th>PHONE NUMBER </th>
+      <td>{{val.phone}}</td>
+    </tr>
+    <tr>
+      <th>EMAIL</th>
+      <td>{{val.email}}</td>
+    </tr>
+    <tr>
+      <th>AADHAR CARD NUMBER </th>
+      <td>{{val.aadhar_number}}</td>
+    </tr>
+    <tr>
+      <th>PHOTO</th>
+      <td><img src="{{val.photo.url}}" alt="" height="100" width="100"/></td>
+
+    </tr>
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="EDIT" class="btn btn-info" />
+  </p>
+  <label></label>
+</form>
+</body>
+
+{% endblock %}

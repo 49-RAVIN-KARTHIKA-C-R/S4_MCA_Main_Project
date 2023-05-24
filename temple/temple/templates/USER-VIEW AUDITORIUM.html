@@ -1,0 +1,43 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<center><h2>View Auditorium Details</h2></center>
+<body>
+<form id="form1" name="form1" method="post" action="usr_aud_booking">
+  <table width="336" height="250" border="1" id="customers">
+    <tr>
+      <td> NAME </td>
+      <td>{{val.auditorium_name}}</td>
+    </tr>
+    <tr>
+      <td>PLACE</td>
+      <td>{{val.place}}</td>
+    </tr>
+    <tr>
+      <td>PHONE</td>
+      <td>{{val.phone}}</td>
+    </tr>
+    <tr>
+      <td>SEATS</td>
+      <td>{{val.seats}}</td>
+    </tr>
+    <tr>
+      <td>ADVANCE CHARGE</td>
+      <td>{{val.advance_charge}}</td>
+    </tr>
+    <tr>
+      <td>DETAILS</td>
+      <td>{{val.details}}</td>
+    </tr>
+    <tr>
+      <td>PHOTO</td>
+            <td><img src="{{val.photo.url}}" alt="" height="100" width="100"/></td>
+    </tr>
+
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="BOOK" />
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

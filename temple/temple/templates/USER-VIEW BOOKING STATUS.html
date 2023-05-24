@@ -1,0 +1,30 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+
+<h1><center>View Status Of Auditorium Booking</center></h1>
+<br><br>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="292" height="89" border="1" id="customers">
+    <tr>
+      <th width="146">FUNCTION TYPE</th>
+      <th width="49">DATE</th>
+      <th width="47">STATUS</th>
+      <th width="47"></th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.type}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.status}}</td>
+     {% if i.status == 'approved' %} <td><a href="{% url 'usr_declaration' id=i.id %}" class="btn btn-info">PAY IN ADVANCE</a></td>
+      {% elif i.status == 'paid' %}<td><a href="{% url 'aud_bill_generate1' id=i.id %}" class="btn btn-info">DOWNLOAD BILL</a></td>
+      {% else %}
+      <td> </td>{% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+
+{% endblock %}

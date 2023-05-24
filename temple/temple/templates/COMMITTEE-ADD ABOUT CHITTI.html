@@ -1,0 +1,61 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<head><h1>Committee Add Chitti</h1></head>
+<body>
+<form id="form1" name="form1" method="post" action="add_about_chitti1">
+  <table width="209" border="1" id="customers">
+    <tr>
+      <th width="49">CHITTI NAME </th>
+      <th width="144"><label>
+        <input type="text" name="textfield" required />
+      </label></th>
+
+    </tr>
+<!--    <tr>-->
+<!--      <td>CHITTI TYPE</td>-->
+<!--      <td><select name="chittitype" >-->
+<!--          <option value="500 chitti">500 chitti</option>-->
+<!--          <option value="500 chitti">200 chitti</option>-->
+<!--      </select></td>-->
+<!--    </tr>-->
+    <tr>
+      <th height="43">NO OF MEMBERS</th>
+      <td><input type="textarea" name="textfield2" required/></td>
+    </tr>
+    <tr>
+      <th height="43">DETAILS</th>
+      <td><input type="textarea" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th>WINNING AMOUNT</th>
+      <td><input type="text" name="textfield4" required/></td>
+    </tr>
+    <tr>
+      <th>DURATION IN MONTHS</th>
+      <td><input type="text" name="textfield5" required/></td>
+    </tr>
+    <tr>
+
+            <th>CHITTI AMOUNT</th>
+      <td><input type="text" name="textfield6" required/></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.type}}</td>
+      <td>{{i.no_members}}</td>
+      <td>{{i.details}}</td>
+      <td>{{i.amounts}}</td>
+      <td>{{i.duration}}</td>
+      <td>{{i.total_amounts}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p>
+    <input type="submit" name="Submit" value="ADD" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+
+{% endblock %}

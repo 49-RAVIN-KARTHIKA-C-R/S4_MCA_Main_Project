@@ -1,0 +1,43 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<head><h1>Committee Edit Chitti</h1></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'update_about_chitti' %}">
+  <table width="209" border="1" id="customers">
+    <tr>
+      <th width="49">CHITTI NAME </th>
+      <td width="144"><label>
+        <input type="text" name="textfield" value="{{val.type}}" required   pattern="[A-Z a-z]{2,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th height="43">NUMBER OF MEMBERS</th>
+      <td><input type="textarea" name="textfield2" value="{{val.no_members}}" required/></td>
+    </tr>
+    <tr>
+      <th height="43">DETAILS</th>
+      <td><input type="textarea" name="textfield3" value="{{val.details}}" required/></td>
+    </tr>
+    <tr>
+      <th>WINNING AMOUNT</th>
+      <td><input type="text" name="textfield4" value="{{val.winning_amounts}}" required/></td>
+    </tr>
+    <tr>
+      <th>DURATION IN MONTHS</th>
+      <td><input type="text" name="textfield5" value="{{val.duration}}" required/></td>
+    </tr>
+    <tr>
+      <th>CHITTI AMOUNT</th>
+      <td><input type="text" name="textfield6" value="{{val.chitti_amount}}" required/></td>
+    </tr>
+  </table>
+
+  <p>
+    <input type="submit" name="Submit" value="UPDATE" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<h1>Book Auditorium</h1>
+<body>
+<form id="form1" name="form1" method="post" action="user_book_button">
+  <table width="489" height="250" border="1" id="customers">
+    <tr>
+      <th width="174">USER NAME </th>
+      <td width="299">{{val.first_name}} {{val.last_name}}</td>
+    </tr>
+    <tr>
+      <th>FATHER'S NAME </th>
+      <td>{{val.fathers_name}}</td>
+    </tr>
+    <tr>
+      <th>ADDRESS </th>
+      <td>{{val.house_name}} {{val.street}} {{val.city}} {{val.pin}}</td>
+    </tr>
+
+    <tr>
+      <th>PHONE NUMBER </th>
+      <td>{{val.phone}}</td>
+    </tr>
+    <tr>
+      <th>REQUIRED PLACE </th>
+      <td><label>
+<!--        <input type="checkbox" name="checks[]" value="whole place" />-->
+<!--      WHOLE PLACE-->
+      <input type="checkbox" name="checks[]" value="auditorium only" />
+AUDITORIUM ONLY
+      <input type="checkbox" name="checks[]" value="kitchen only" />
+      KITCHEN ONLY</label></td>
+    </tr>
+    <tr>
+      <th>FUNCTION DATE </th>
+      <td><input type="date" name="textfield6" required min="{{cdt}}"/></td>
+    </tr>
+<!--    <tr>-->
+<!--      <th>FUNCTION TIME </th>-->
+<!--      <td><input type="time" name="textfield7" /></td>-->
+<!--    </tr>-->
+    <tr>
+      <th>FUNCTION TYPE </th>
+      <td><label>
+        <select name="type" required>
+		  <option value="">select</option>
+          <option value="MARRIAGE">MARRIAGE</option>
+          <option value="ENGAGEMENT">ENGAGEMENT</option>
+          <option value="BIRTHDAY FUNCTIONS">BIRTHDAY FUNCTIONS</option>
+          <option value="OTHERS">OTHERS</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th>DETAILS</th>
+      <td><input type="text" name="textfield4" required/></td>
+    </tr>
+    <tr>
+      <th>GENERATOR</th>
+      <td><label>
+        <input name="generator" type="radio" value="yes" />
+      YES
+      <input name="generator" type="radio" value="no" />
+      NO</label></td>
+    </tr>
+  </table>
+    <br><br>
+    <h2>STATEMENT OF TRUTH </h2>
+    <p>&nbsp;<b>
+        I hereby assure you that I will be responsible for any damage caused to the equipment of
+        the auditorium during the above mentioned period by following the terms of use of Palakunnu Sri Ambika
+        Auditorium and that I will not use
+        plastic glasses or other plastic items in the auditorium under any circumstances.</b>
+    </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" required name="checkbox" value="checkbox"> I accept the <u>Terms and Conditions</u></p>
+  <p>
+    <input type="submit" name="Submit" value="SUBMIT" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

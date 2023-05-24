@@ -1,0 +1,31 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head><center><h2>Temple Programmes</h2></head></center>
+<br>
+<body>
+<form id="form1" name="form1" method="post" action="mbr_view_tmp_pgm">
+  <table width="209" border="1" id="customers">
+
+    <tr>
+      <td width="46">PROGRAMME NAME</td>
+      <td width="46">GUEST NAME</td>
+      <td width="107">DATE </td>
+      <td width="107">TIME </td>
+      <td width="53">PHOTO</td>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.program}}</td>
+      <td>&nbsp;{{i.guest}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>&nbsp;{{i.time}}</td>
+      <td>&nbsp;<img src="{{i.photo.url}}" alt="" height="100" width="100"/></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

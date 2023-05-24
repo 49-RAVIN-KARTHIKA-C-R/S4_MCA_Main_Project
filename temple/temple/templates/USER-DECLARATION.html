@@ -1,0 +1,37 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<center></center>
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'usr_view_adv_payment' %}">
+  <center>
+    <br>
+        <br>
+    <br>
+
+  <table width="489" height="250" border="0" class="table">
+
+    <tr align="center">
+      <td><p>&nbsp;
+        I hereby assure you that I will be responsible for any damage caused to the equipment of
+        the auditorium during the above<br> mentioned period by following the terms of use of Palakunnu Sri Ambika
+        Auditorium and that I will not use
+        plastic glasses or other plastic items in the auditorium under any circumstances.
+          </p>
+      </td>
+    <tr align="center"><td>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" required name="checkbox" value="checkbox"> I accept the <u>Terms and Conditions</u></p><br>
+
+    <input type="submit" name="Submit" value="SUBMIT" class="btn btn-info"/>
+  </p>
+  </td></tr>
+    </tr>
+
+  </table>
+
+
+  <label></label>
+    </center>
+</form>
+</body>
+{% endblock %}

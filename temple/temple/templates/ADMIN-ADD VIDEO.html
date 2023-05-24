@@ -1,0 +1,27 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<center><h2>ADD VIDEO</h2></center>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_video2" enctype="multipart/form-data">
+  <table width="394" border="1" id="customers">
+    <tr>
+      <th>EVENT NAME </th>
+      <td><input type="text" name="textfield" required pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+
+    <tr>
+      <th>VIDEO</th>
+      <td><label>
+        <input type="file" name="file" required/>
+      </label></td>
+    </tr>
+  </table>
+  <p>&nbsp;  </p>
+  <p>
+    <input type="submit" name="Submit22" value="UPLOAD" class="btn btn-info"/>
+  </p>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

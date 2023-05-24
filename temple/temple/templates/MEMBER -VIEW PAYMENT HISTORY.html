@@ -1,0 +1,26 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head><center><h2>Chitti Payment History</h2></head></center>
+
+
+<body>
+<form id="form1" name="form1" method="post" action="mbr_chitti_details">
+  <table width="657" height="89" border="1" id="customers">
+    <tr>
+      <th width="70">DATE OF PAYMENT</th>
+      <th width="109">MONTH OF PAYMENT</th>
+    </tr>
+{% for i in v %}
+    <tr>
+      <td>&nbsp;{{i.date|date:'Y-m-d'}}</td>
+      <td>&nbsp;{{i.date|date:'F'}}</td>
+    </tr>
+{% endfor %}
+
+  </table>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+{% endblock %}

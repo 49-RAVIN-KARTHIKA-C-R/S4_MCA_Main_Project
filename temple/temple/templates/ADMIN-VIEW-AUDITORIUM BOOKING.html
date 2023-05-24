@@ -1,0 +1,31 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<center><h2>AUDITORIUM PAYMENT DETAILS</h2></center>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1082" height="94" border="1" id="customers">
+    <tr>
+      <th width="116">USER NAME </th>
+      <th width="121">FUNCTION DATE </th>
+      <th width="116">FUNCTION NAME </th>
+      <th width="90">PHONE NUMBER </th>
+      <th width="91">STATUS (PAID / NOT)</th>
+    </tr>
+    {% for i in v %}
+    {% if i.status == 'approved' or i.status == 'paid' %}
+    <tr>
+      <td>&nbsp;{{i.user_id.first_name}} {{i.user_id.last_name}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>&nbsp;{{i.type}}</td>
+      <td>{{i.user_id.phone}}&nbsp;</td>
+      {% if i.status == 'paid' %}<td >&nbsp;<a href="{% url 'aud_bill_generate' id=i.id %}" class="btn btn-success">VIEW BILL</a> </td>{% else %}<td ><a href="#" class="btn btn-danger">Not Paid</a> </td>{% endif %}
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+{% endblock %}

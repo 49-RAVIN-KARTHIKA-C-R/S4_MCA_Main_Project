@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% block body %}
+<h1><center>Registration Form</center></h1>
+
+
+<body>
+<form id="form1" name="form1" method="post" action="user_login" enctype="multipart/form-data">
+  <div align="center">
+  <table width="336" height="250" border="0" class="table" >
+    <tr>
+      <th>FIRST NAME </th>
+      <td><label>
+        <input type="text" name="textfield" required   pattern="[A-Z a-z]{2,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th>LAST NAME </th>
+      <td><input type="text" name="textfield2" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>FATHER'S NAME </th>
+      <td><input type="text" name="textfield22" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>HOUSE NAME </th>
+      <td><input type="text" name="textfield3" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>STREET</th>
+      <td><input type="text" name="textfield4" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+<!--    <tr>-->
+<!--      <td>POST </td>-->
+<!--      <td><input type="text" name="textfield12" /></td>-->
+<!--    </tr>-->
+    <tr>
+      <th>CITY</th>
+      <td><input type="text" name="textfield5" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>PIN</th>
+      <td><input type="text" name="textfield6" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <th>PHONE NUMBER </th>
+      <td><input type="text" name="textfield7" required  pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <th>EMAIL</th>
+      <td><input type="text" name="textfield8" /></td>
+    </tr>
+    <tr>
+      <th>AADHAR CARD NUMBER </th>
+      <td><input type="text" name="textfield9" required pattern="[6789][0-9]{11}"/></td>
+    </tr>
+    <tr>
+      <th> USERNAME </th>
+      <td><input type="text" name="textfield10" required   pattern="[A-Z a-z]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th> PASSWORD </th>
+      <td><input type="text" name="textfield11" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/></td>
+    </tr>
+    <tr>
+      <th>PHOTO</th>
+      <td><label>
+        <input type="file" name="file" required/>
+      </label></td>
+    </tr>
+  </table></div><br>
+  <br>
+  <div align="center">
+    <input type="submit" name="Submit" value="REGISTER" class="btn btn-info"/>
+  </div>
+  <label></label>
+</form>
+</body>
+{% endblock %}

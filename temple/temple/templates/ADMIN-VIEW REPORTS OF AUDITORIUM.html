@@ -1,0 +1,35 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<h1><center>REPORTS OF AUDITORIUM BOOKING</center></h1>
+<br>
+<br>
+<body>
+<form id="form1" name="form1" method="post" action="view_reports_auditorium1">
+  <center>
+    <label>SEARCH DATE FROM 
+    <input type="date" name="textfield" required value="{{sdate}}"/>
+    </label>
+  &nbsp;&nbsp;&nbsp;&nbsp; TO &nbsp;&nbsp;
+   <input type="date" name="textfield2" required value="{{edate}}"/>
+   <label>&nbsp;&nbsp;
+  <input type="submit" name="Submit" value="SEARCH" class="btn btn-primary" />
+  </label>
+  </center>
+  <p>&nbsp;</p>
+  <table width="425" height="98" border="1" id="customers">
+    <tr>
+      <th width="93" height="61">FUNCTIONS</th>
+      <th width="138">DATE OF FUNCTIONS</th>
+    </tr>
+    {% for i in v %}
+    <tr>
+      <td>&nbsp;{{i.type}}</td>
+      <td>&nbsp;{{i.date}}</td>
+    </tr>
+    {% endfor %}
+    <tr ALIGN="CENTER"><tH COLSPAN="2"><center>TOTAL NUMBER OF BOOKINGS &nbsp;&nbsp; : &nbsp;&nbsp; <b class="btn btn-primary"><font color="black" size="5"> <b>{{total}}</b></font></b></center></tH></tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

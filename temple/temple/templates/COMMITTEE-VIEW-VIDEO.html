@@ -1,0 +1,25 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<h1><center>Videos</center></h1>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_video">
+  <table width="242" height="89" border="1" id="customers">
+    <tr>
+      <th width="46">EVENT NAME </th>
+      <th width="49">VIDEO</th>
+      <th width="49">DATE TIME</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.subject}}</td>
+      <td><video  height="150" width="350" controls="controls">
+        <source src="./media/{{i.video}}" type="video/mp4"> </video></td>
+      <td>{{i.date_time}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+
+{% endblock %}

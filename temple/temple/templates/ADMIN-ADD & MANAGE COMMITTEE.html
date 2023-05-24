@@ -1,0 +1,41 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<H2>Manage Committee</H2>
+<br>
+<body>
+<form id="form1" name="form1" method="post" action="add_mng_committee">
+  <table width="708" height="99" border="1" id="customers">
+    <tr>
+      <th width="300">COMMITTEE NAME </th>
+      <th width="200">PRESIDENT</th>
+      <th width="200">SECRETARY</th>
+      <th width="250">NUMBER OF MEMBERS </th>
+      <th width="200">PHONE NUMBER </th>
+      <th width="200">EMAIL </th>
+      <th width="200"></th>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td height="32">{{i.committee_name}}</td>
+      <td>&nbsp;{{i.president}}</td>
+      <td>&nbsp;{{i.secretary}}</td>
+      <td>{{i.no_members}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{i.email}}</td>
+      <td><p><a href="{% url 'edit_manage_committee' id=i.login_id.id %}" class="btn btn-success">EDIT</a></p>
+          <p><a href="{% url 'delete_manage_committee' id=i.login_id.id %}" class="btn btn-danger">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="Add New" class="button button2" />
+    </label>
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>
+{% endblock %}

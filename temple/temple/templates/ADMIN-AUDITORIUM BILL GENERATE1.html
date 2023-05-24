@@ -1,0 +1,81 @@
+{% extends 'indexuser.html' %}
+{% block body %}
+<head>
+  <style>
+    table.four {
+    border-style: dashed;
+    }
+    table.five {
+        border-style: dashed;
+        border-color:#F3F6FF;;
+
+    border-width:10px;
+    }
+  </style>
+</head>
+<!--<center><h2>BILL</h2></center>-->
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center" id="abc">
+     <table width="694" height="250" border="4" id="">
+    <tr >
+      <th>
+
+  <table width="694" height="250" border="0"  class="five">
+    <tr>
+      <th width="176" colspan="3" ><center>BILL NO  - {{v.id}} </center></th>
+    </tr>
+    <tr><th >
+  <table width="694" height="250" border="3" id="customers" class="four">
+    <tr>
+      <td width="138" colspan="3"><center><h2><b><font style="font-family:serif;color:black;">{{v1.auditorium_name}} &nbsp;AUDITORIUM</font></b></h2></center></td>
+    </tr>
+    <tr><td colspan="3"><center><b>- - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - -  - - -  - - - - - - - - - - - - </b></center></td></tr>
+
+    <tr>
+      <td><center><b><font style="font-family:Times New Roman;" color="black"> NAME</font> </b> </center></td>
+      <td style="width:9px;"><b>:</b></td>
+      <td><center>{{v.user_id.first_name}} {{v.user_id.last_name}}</center></td>
+    </tr>
+    <tr>
+      <td><center><font style="font-family:Times New Roman;" color="black"><b>ADDRESS</b></font></center></center></td>
+            <td style="width:9px;"><b>:</b></td>
+
+      <td><center>&nbsp;{{v.user_id.house_name}} , {{v.user_id.city}} , {{v.user_id.pin}}</center></td>
+    </tr>
+    <tr>
+      <td><center><font style="font-family:Times New Roman;" color="black"><b>FUNCTION TYPE</b></font></center> </td>      <td style="width:9px;"><b>:</b></td>
+
+      <td><center>{{v.type}}</center></td>
+    </tr>
+    <tr>
+      <td><center><font style="font-family:Times New Roman;" color="black"><b>BOOKING DATE </b></font></center></td>      <td style="width:9px;"><b>:</b></td>
+
+      <td><center>{{v.date}}</center></td>
+    </tr>
+
+    <tr>
+      <td colspan="3"><center><font style="font-family:Times New Roman;" color="black"><b>ADVANCE AMOUNT  </b></font><b class="btn btn-danger" >{{v1.advance_charge}} /- </b></center></td>
+
+    </tr>
+     <tr>&nbsp;<td colspan="3">
+        <ol style="font-family:Times New Roman;color:black;" >
+            <li>The advance amount paid will not be refunded if the booking is cancelled.</li>
+            <li>Use of plastic plate & glasses are strictly prohibited in the Auditorium.</li>
+            <li>If the rent is enhanced after booking ,the parties are to pay it.</li>
+
+         </ol></td>
+  </tr>
+
+  </table>
+    </th></tr>
+  </table></th></tr></table>
+  </div>
+  <br>
+  <br>
+  <div align="center"><input type="submit" class="btn btn-dark" onclick="window.print()" value="DOWNLOAD" id="#abc"></div>
+</form>
+</body>
+
+{% endblock %}

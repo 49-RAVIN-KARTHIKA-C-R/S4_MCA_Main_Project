@@ -1,0 +1,51 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<center><h2>WINNERS REPORT</h2></center>
+<body>
+<form id="form1" name="form1" method="post" action="cm_view_winners1">
+  <table width="273" height="89" border="1" id="customers">
+    <tr>
+      <th colspan="4"><center>CHITTI
+
+        <select name="chittitype" class="btn btn-info">
+          {% for i in v %}
+          <option value="{{i.id}}" {% if i.id == c %}selected{% endif %}>{{i.type}}</option>
+          {% endfor %}
+        </select>
+&nbsp;&nbsp;
+    MONTH
+        <select name="month" class="btn btn-info">
+          <option value="1" {% if mnth == 1 %}selected{% endif %}>JANUARY</option>
+          <option value="2" {% if mnth == 2 %}selected{% endif %}>FEBRUARY</option>
+          <option value="3" {% if mnth == 3 %}selected{% endif %}>MARCH</option>
+          <option value="4" {% if mnth == 4 %}selected{% endif %}>APRIL</option>
+          <option value="5" {% if mnth == 5 %}selected{% endif %}>MAY</option>
+          <option value="6" {% if mnth == 6 %}selected{% endif %}>JUNE</option>
+          <option value="7" {% if mnth == 7 %}selected{% endif %}>JULY</option>
+          <option value="8" {% if mnth == 8 %}selected{% endif %}>AUGUST</option>
+          <option value="9" {% if mnth == 9 %}selected{% endif %}>SEPTEMBER</option>
+          <option value="10" {% if mnth == 10 %}selected{% endif %}>OCTOBER</option>
+          <option value="11" {% if mnth == 11 %}selected{% endif %}>NOVEMBER</option>
+          <option value="12" {% if mnth == 12 %}selected{% endif %}>DECEMBER</option>
+        </select>
+        &nbsp;&nbsp;
+        <input type="submit" name="Submit" value="SEARCH" class="btn btn-info"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;</center>
+      </th>
+    </tr>
+      <tr>  <th colspan=""> <center> WINNING AMOUNT: {{amt.winning_amounts}}/-</center></th>
+
+    </tr>
+    <tr>
+        <th><center>MEMBERS</center></th>
+    </tr>
+      {% for i in res %}
+    <tr>
+        <td>&nbsp;<center>{{i.member_id.first_name}} {{i.member_id.last_name}} </center></td>
+    </tr>
+      {% endfor %}
+  </table>
+
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<head><h1>Verify Member</h1></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="618" height="99" border="1" id="customers">
+    <tr>
+      <th width="83">NAME</th>
+      <th width="86">ADDRESS</th>
+      <th width="121">PHONE NUMBER </th>
+      <th width="84">AADHAR NUMBER</th>
+      <th width="97">EMAIL</th>
+      <th width="107">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.first_name}} {{i.last_name}}</td>
+      <td>&nbsp;{{i.house_name}}  {{i.street}}  {{i.post}}  {{i.city}}  {{i.pin}}</td>
+      <td> {{i.phone}}</td>
+      <td>&nbsp;{{i.aadhar_number}}</td>
+      <td>&nbsp;{{i.email}}</td>
+     {% if i.login_id.type == 'pending' %} <td><p><a href="{% url 'approve_member' id=i.login_id.id %}" class="btn btn-success">APPROVE</a></p>
+      <p><a href="{% url 'reject_member' id=i.login_id.id %}" class="btn btn-danger">REJECT</a></p></td>{% else %}
+      <td>{{i.login_id.type}}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

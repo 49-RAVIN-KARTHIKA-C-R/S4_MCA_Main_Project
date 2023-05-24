@@ -1,0 +1,43 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head>
+  <h1> <center>WINNERS</center></h1>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="mbr_view_winners_slt_chitti_search">
+ <div align="center"> <table width="489" height="89" border="1" id="customers">
+    <tr align="center">
+      <td colspan="3"> <center>CHITTI :
+        <select name="chittitype" class="btn btn-info">
+          {% for i in v2 %}
+          <option value="{{i.id}}" {% if i.id  == count %} selected {% endif %}>{{i.type}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="SEARCH" class="btn btn-info"/></center>
+      </td>
+    </tr>
+
+   <tr>  <td colspan=""> <center> WINNING AMOUNT: {{val.winning_amounts}} /-</center></td>
+      {% for i in v %}<td> <center>DATE:  {{i.date}}</center></td>{% endfor %}
+    </tr>
+
+    <tr>
+     <td width="200" colspan="3"> <center> WINNER NAME </center></td>
+    </tr>
+
+
+     {% for i in v1 %}
+    <tr>
+      <td colspan="4"> <center> {{i.member_id.first_name}} {{i.member_id.last_name}}</center></td>
+    </tr>
+    {% endfor %}
+
+  </table></div>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+
+
+{% endblock %}

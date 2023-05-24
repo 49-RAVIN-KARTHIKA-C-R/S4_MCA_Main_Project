@@ -1,0 +1,35 @@
+{% extends 'indexcommittee.html' %}
+{% block body %}
+<head><h1>Chitti Details Of Member</h1></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="657" height="89" border="1" id="customers">
+    <tr>
+      <th width="70">MEMBER NAME </th>
+      <th width="111">CHITTI NAME </th>
+      <th width="70">CHITTI AMOUNT</th>
+      <th width="109">DETAILS</th>
+      <th width="109">WINNING AMOUNT</th>
+      <th width="109">DURATION</th>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.member_id.first_name}} {{i.member_id.last_name}}</td>
+      <td>&nbsp;{{i.chitti_id.type}}</td>
+      <td>&nbsp;{{i.chitti_id.chitti_amount}}</td>
+      <td>&nbsp;{{i.chitti_id.details}}</td>
+      <td>&nbsp;{{i.chitti_id.winning_amounts}}</td>
+      <td>&nbsp;{{i.chitti_id.duration}}</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+  <p>
+    <label></label>
+  </p>
+</form>
+</body>
+
+{% endblock %}

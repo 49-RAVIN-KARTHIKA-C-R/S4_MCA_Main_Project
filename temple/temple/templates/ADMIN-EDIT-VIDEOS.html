@@ -1,0 +1,30 @@
+
+{% extends 'indexadmin.html' %}
+{% block body %}
+<center><h2>EDIT VIDEOS</h2></center>
+
+<body>
+<form action="{% url 'update_videos' %}" method="post" enctype="multipart/form-data" name="form1" id="form1" >
+  <table width="209" border="1" id="customers">
+    <tr>
+      <th width="49">EVENT NAME</th>
+      <td width="144"><label>
+        <input type="text" name="textfield" value="{{val.subject}}" pattern="[A-Z a-z]{2,25}"/>
+      </label></td>
+    </tr>
+	 <tr>
+      <th height="44">VIDEO</th>
+      <td><label>
+        <input type="file" name="file" required/>
+        </label></td>
+    </tr>
+    
+   
+  </table>
+  <p>
+    <input type="submit" name="Submit" value="UPDATE" class="btn btn-info"/>
+  </p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

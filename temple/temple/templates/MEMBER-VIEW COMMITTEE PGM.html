@@ -1,0 +1,30 @@
+{% extends 'indexmember.html' %}
+{% block body %}
+<head><center><h2>Committee Programmes</h2></head></center>
+<br>
+<body>
+<form id="form1" name="form1" method="post" action="mbr_view_cm_pgm">
+  <table width="209" border="1" id="customers">
+
+    <tr>
+      <td width="46">PROGRAMME NAME</td>
+      <td width="46">VENUE OF PROGRAMME</td>
+      <td width="107">DATE </td>
+      <td width="107">TIME </td>
+
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.program}}</td>
+      <td>&nbsp;{{i.venue}}</td>
+      <td>&nbsp;{{i.date}}</td>
+      <td>&nbsp;{{i.time}}</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+  <label></label>
+</form>
+</body>
+{% endblock %}

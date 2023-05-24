@@ -1,0 +1,40 @@
+{% extends 'indexMEMBER.html' %}
+{% block body %}
+<head>
+  <h1> <center>SEARCH MONTH PAYMENT</center></h1>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="view_winners_slt_chitti_search">
+ <div align="center"> <table width="489" height="89" border="1" id="customers">
+     <tr>
+      <th colspan="3">MONTH
+
+        <select name="month">
+          <option value="1" {% if mnth == 1 %}selected{% endif %}>JANUARY</option>
+          <option value="2" {% if mnth == 1 %}selected{% endif %}>FEBRUARY</option>
+          <option value="3" {% if mnth == 1 %}selected{% endif %}>MARCH</option>
+          <option value="4" {% if mnth == 1 %}selected{% endif %}>APRIL</option>
+          <option value="5" {% if mnth == 1 %}selected{% endif %}>MAY</option>
+          <option value="6" {% if mnth == 1 %}selected{% endif %}>JUNE</option>
+          <option value="7" {% if mnth == 1 %}selected{% endif %}>JULY</option>
+          <option value="8" {% if mnth == 1 %}selected{% endif %}>AUGUST</option>
+          <option value="9" {% if mnth == 1 %}selected{% endif %}>SEPTEMBER</option>
+          <option value="10" {% if mnth == 1 %}selected{% endif %}>OCTOBER</option>
+          <option value="11" {% if mnth == 1 %}selected{% endif %}>NOVEMBER</option>
+          <option value="12" {% if mnth == 1 %}selected{% endif %}>DECEMBER</option>
+        </select>
+        <input type="submit" name="Submit" value="SEARCH" />
+      </th>
+    </tr>
+
+  </table></div><BR>
+
+      <p>
+<!--    <input type="submit" name="Submit" value="SUBMIT" class="btn btn-info"/>-->
+  </p>
+
+</form>
+</body>
+
+
+{% endblock %}

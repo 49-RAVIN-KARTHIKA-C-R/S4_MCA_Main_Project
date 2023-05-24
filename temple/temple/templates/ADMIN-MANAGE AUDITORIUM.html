@@ -1,0 +1,44 @@
+
+{% extends 'indexadmin.html' %}
+{% block body %}
+<h1>Manage Auditorium</h1>
+
+<body>
+<form id="form1" name="form1" method="post" action="add_mng_auditorium">
+  <table width="638" height="89" border="1" id="customers">
+    <tr>
+      <th width="46">AUDITORIUM NAME</th>
+      <th width="49">PLACE</th>
+      <th width="53">SEATS</th>
+      <th width="47">CHARGE</th>
+      <th width="63">DETAILS</th>
+<!--      <td width="63">GENERATOR</td>-->
+      <th width="63">ADVANCE AMOUNT</th>
+      <th width="53">PHONE</th>
+      <th width="53">PHOTO</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i.auditorium_name}}</td>
+      <td>{{i.place}}</td>
+      <td>&nbsp;{{i.seats}}</td>
+      <td>&nbsp;{{i.charge}}</td>
+      <td>&nbsp;{{i.details}}</td>
+      <td>&nbsp;{{i.advance_charge}}</td>
+      <td>&nbsp;{{i.phone}}</td>
+      <td>&nbsp;<img src="{{i.photo.url}}" alt="" height="100" width="100"/></td>
+
+      <td><p><a href="{% url 'edit_manage_auditorium' id=i.id %}" class="btn btn-success">EDIT</a></p>
+      <p><a href="{% url 'delete_manage_auditorium' id=i.id %}" class="btn btn-danger">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="ADD NEW" class="btn btn-info"/>
+    </label>
+  </p>
+</form>
+</body>
+
+{% endblock %}
